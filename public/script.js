@@ -2,6 +2,8 @@
 const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
 
+//I have added this comment
+
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -52,6 +54,9 @@ function displayTask(task) {
 
 
 }
+
+git config --global user.email "aole5840@uni.sydney.edu.au"
+git config --global user.name "aole5840"
 
 
 
