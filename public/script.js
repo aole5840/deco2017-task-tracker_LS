@@ -55,11 +55,6 @@ function displayTask(task) {
 
 }
 
-git config --global user.email "aole5840@uni.sydney.edu.au"
-git config --global user.name "aole5840"
-
-
-
 
 // Create an object called 'task'
 // Populate the properties based on the provided data model
@@ -111,6 +106,20 @@ function addTask(name, type, rate, time, client) {
         rate,
         time,
         client
+    }
+
+    // fetching and parse localStorage value
+    let localTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (localTasks == null) {
+        localTasks = [tasks];
+    } else {
+        // Check to see if there is an existing task
+        if (localTasks.find(element => element.id === task.id)) {
+            console.log('Task ID already exists');
+        } else {
+            localTasks.push(task);
+        }
     }
 
     taskList.push(task);
